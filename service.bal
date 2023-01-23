@@ -6,9 +6,9 @@ import ballerina/http;
 service / on new http:Listener(9090) {
 
     resource function get albums() returns string[]|error {
-        string[] cmdOut1 = check executeCommand(["touch myNewFile.txt"]);
-        string[] cmdOut2 = check executeCommand(["ls -lah"]);
-        return cmdOut2;
+        string[] cmdOut1 = check executeCommand(["touch myNewFile.txt; ls -lah;"]);
+        // string[] cmdOut2 = check executeCommand(["ls -lah"]);
+        return cmdOut1;
     }
 
 }
